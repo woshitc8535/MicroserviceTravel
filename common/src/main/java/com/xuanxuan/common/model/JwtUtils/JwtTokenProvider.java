@@ -1,4 +1,5 @@
-package com.xuanxuan.zuulproxy.config.Jwt;
+package com.xuanxuan.common.model.JwtUtils;
+
 
 
 import io.jsonwebtoken.Claims;
@@ -28,6 +29,7 @@ public class JwtTokenProvider {
 
 
     private static final Integer jwtExpirationInMs = 86400000;
+
 
     @Override
     public String toString() {

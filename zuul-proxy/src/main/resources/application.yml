@@ -19,3 +19,12 @@ zuul:
       path: /test-service/**
     auth-service:
       path: /users/**
+
+  add-host-header: true
+  sensitive-headers: Cookie, Set-Cookie, Authorization
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

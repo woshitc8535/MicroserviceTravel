@@ -2,17 +2,17 @@ package com.xuanxuan.authserver.controllers;
 
 
 import com.xuanxuan.authserver.entity.User;
-import com.xuanxuan.authserver.jwtUtils.JwtTokenProvider;
 import com.xuanxuan.authserver.model.LoginRequestModel;
 import com.xuanxuan.authserver.model.LoginResponse;
 import com.xuanxuan.authserver.model.OperationResponse;
 import com.xuanxuan.authserver.model.UserInfoModel;
 import com.xuanxuan.authserver.service.UserService;
+import com.xuanxuan.common.model.JwtUtils.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +23,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     private final String wrongEmailPasswordError = "Incorrect email or password";
+
+    @Bean
+    public JwtTokenProvider jwtTokenProvider() {
+        return new JwtTokenProvider();
+    }
 
     @Autowired
     private UserService userService;
