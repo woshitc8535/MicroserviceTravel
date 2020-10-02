@@ -7,8 +7,8 @@
         <artifactId>travelplannermicroservice</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <artifactId>common-api-config</artifactId>
 
-    <artifactId>common-api-commons</artifactId>
 
     <dependencies>
         <dependency>
@@ -23,19 +23,8 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
             <version>2.3.4.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.9.1</version>
         </dependency>
 
         <dependency>
@@ -57,7 +46,6 @@
             <artifactId>logstash-logback-encoder</artifactId>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -70,6 +58,4 @@
             </exclusions>
         </dependency>
     </dependencies>
-
-
 </project>

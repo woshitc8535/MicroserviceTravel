@@ -1,5 +1,6 @@
 package com.xuanxuan.authserver.service;
 
+import com.xuanxuan.authserver.model.OperationResponse;
 import com.xuanxuan.authserver.model.UserInfoModel;
 import com.xuanxuan.authserver.entity.User;
 import com.xuanxuan.authserver.repository.UserRepository;
@@ -18,15 +19,18 @@ public class UserServiceImp implements UserService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public UserInfoModel saveUser(User user) {
+    public OperationResponse saveUser(User user) {
+        OperationResponse res = new OperationResponse();
+        if (userRepository.findUserByEmail(user.getEmail()).isPresent()) {
+            return OperationResponse.getFailedResponse("Email Already been taken");
+        }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         UserInfoModel model = new UserInfoModel();
         model.setEmail(user.getEmail());
         model.setName(user.getUsername());
         userRepository.save(user);
-        return model;
+        return OperationResponse.getSuccessResponse();
     }
-
 
     @Override
     public User findByEmail(String email) {

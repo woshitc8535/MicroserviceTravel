@@ -1,8 +1,8 @@
 package com.xuanxuan.zuulproxy.config;
 
 
-import com.xuanxuan.common.model.JwtUtils.JwtAuthorizationFilter;
-import com.xuanxuan.common.model.JwtUtils.JwtTokenProvider;
+import com.xuanxuan.common.JwtUtils.JwtAuthorizationFilter;
+import com.xuanxuan.common.JwtUtils.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

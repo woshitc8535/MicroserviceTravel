@@ -7,7 +7,7 @@ import com.xuanxuan.authserver.model.LoginResponse;
 import com.xuanxuan.authserver.model.OperationResponse;
 import com.xuanxuan.authserver.model.UserInfoModel;
 import com.xuanxuan.authserver.service.UserService;
-import com.xuanxuan.common.model.JwtUtils.JwtTokenProvider;
+import com.xuanxuan.common.JwtUtils.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
@@ -67,11 +67,12 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
-        if (userService.findByEmail(user.getEmail()) != null) {
-            return new ResponseEntity<>("User Already Exist", HttpStatus.CONFLICT);
+        try {
+            OperationResponse res = userService.saveUser(user);
+            return new ResponseEntity<>(res, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(OperationResponse.getFailedResponse(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        userService.saveUser(user);
-        return new ResponseEntity<>("Create Successfully", HttpStatus.CREATED);
     }
 
     @GetMapping("/test")

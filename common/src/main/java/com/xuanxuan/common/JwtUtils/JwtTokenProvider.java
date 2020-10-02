@@ -1,4 +1,4 @@
-package com.xuanxuan.common.model.JwtUtils;
+package com.xuanxuan.common.JwtUtils;
 
 
 
