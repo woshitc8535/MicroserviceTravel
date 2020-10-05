@@ -7,24 +7,20 @@
         <artifactId>travelplannermicroservice</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <artifactId>eureka-client</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-client</name>
+    <artifactId>elasticsearch</artifactId>
+    <name>elasticsearch</name>
     <description>Demo project for Spring Boot</description>
-
 
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>2.2.4.RELEASE</version>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
         <dependency>
@@ -35,21 +31,12 @@
         <dependency>
             <groupId>com.xuanxuan</groupId>
             <artifactId>common-api-config</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>se.walkercrou</groupId>
-            <artifactId>google-places-api-java</artifactId>
-            <version>2.1.7</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>1.9.81</version>
-        </dependency>
-
 
 
         <dependency>

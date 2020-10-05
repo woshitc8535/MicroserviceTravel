@@ -26,7 +26,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and()
                 .authorizeRequests()
-                .antMatchers("/users/**", "/actuator/**").permitAll()
+                .antMatchers("/users/**", "/actuator/**", "/test-service/searchPlace").permitAll()
                 .anyRequest().fullyAuthenticated().and()
                 .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

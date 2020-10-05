@@ -19,6 +19,8 @@ zuul:
       path: /test-service/**
     auth-service:
       path: /users/**
+    elasticsearch:
+      path: /place/**
 
   add-host-header: true
   sensitive-headers: Cookie, Set-Cookie, Authorization

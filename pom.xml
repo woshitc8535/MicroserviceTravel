@@ -120,6 +120,7 @@
 				<artifactId>common-api-config</artifactId>
 				<version>${common-api-config.version}</version>
 			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
